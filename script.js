@@ -70,3 +70,11 @@ function clickMe_mul() {
 
 
 // }
+
+  function clickMe(num) {
+      document.getElementById("txtSample").value += num;
+      
+  }
+
+  
+  
