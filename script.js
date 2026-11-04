@@ -1,3 +1,8 @@
+
+let calHitory = [];
+
+
+
 function clickMe_sum() {
 
     let txtvalue = document.getElementById("txtSample").value;
@@ -11,8 +16,23 @@ function clickMe_sum() {
     console.log(total);
     document.getElementById("lblSelection").innerHTML = "<h1>" + total + "</h1>";
 
-    
+
+    calHitory.push(num1 + "+" + num2 + "=" + total);
+
+clickMe_H();
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 function clickMe_red() {
@@ -23,10 +43,16 @@ function clickMe_red() {
     let txtvalue2 = document.getElementById("txtSample2").value;
     let num2 = parseInt(txtvalue2);
 
-
     let total = num1 - num2;
     console.log(total);
-    document.getElementById("lblSelection").innerHTML = "<h1>" + total + "</h1>";}
+    document.getElementById("lblSelection").innerHTML = "<h1>" + total + "</h1>";
+
+
+    calHitory.push(num1 + "-" + num2 + "=" + total);
+
+
+clickMe_H();
+}
 
 
 
@@ -42,6 +68,12 @@ function clickMe_dev() {
     let total = num1 / num2;
     console.log(total);
     document.getElementById("lblSelection").innerHTML = "<h1>" + total + "</h1>";
+
+
+    calHitory.push(num1 + "/" + num2 + "=" + total);
+
+clickMe_H();
+
 }
 
 
@@ -50,13 +82,21 @@ function clickMe_mul() {
     let txtvalue = document.getElementById("txtSample").value;
     let num1 = parseInt(txtvalue);
 
-    let txtvalue2 = document.getElementById("txtSample2").value;
-    let num2 = parseInt(txtvalue2);
+        let txtvalue2 = document.getElementById("txtSample2").value;
+         let num2 = parseInt(txtvalue2);
 
 
     let total = num1 * num2;
     console.log(total);
     document.getElementById("lblSelection").innerHTML = "<h1>" + total + "</h1>";
+
+
+    calHitory.push(num1 + "*" + num2 + "=" + total);
+
+    clickMe_H();
+
+
+
 }
 
 
@@ -71,10 +111,27 @@ function clickMe_mul() {
 
 // }
 
-  function clickMe(num) {
-      document.getElementById("txtSample").value += num;
-      
-  }
+function clickMe(num) {
+    document.getElementById("txtSample").value += num;
 
-  
-  
+}
+
+
+
+
+function clickMe_H() {
+
+    document.getElementById("hhh").innerHTML = "";
+
+    for (let i = 0; i < calHitory.length; i++) {
+        //const element = calHitory[i];
+
+        document.getElementById("hhh").innerHTML += "<li>" + calHitory[i] + "</li>";
+
+
+    }
+
+
+
+    
+}
